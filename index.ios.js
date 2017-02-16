@@ -100,7 +100,7 @@ export default class SliceLocator extends Component {
     );
     if ( !this.state.movies ) {
       return (
-          <Container>
+          <Container style={styles.container}>
           {header}
             <Content>
               <Spinner color='blue' />
@@ -121,7 +121,7 @@ export default class SliceLocator extends Component {
     }
 
     return (
-            <Container>
+            <Container style={styles.container}>
                 {header}
                 <Content>
                     {events}
@@ -133,12 +133,15 @@ export default class SliceLocator extends Component {
 }
 
 const styles = {
-    listItem: {
-      borderBottomWidth: 0,
-    },
-    card: {
+	listItem: {
+		borderBottomWidth: 0,
+	},
+	card: {
 
-    },
+	},
+	container: {
+		backgroundColor: '#F5F5F5',
+	},
 };
 
 AppRegistry.registerComponent('SliceLocator', () => SliceLocator);

@@ -40,17 +40,6 @@
     <false/>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-        <key>localhost</key>
-        <dict>
-          <key>NSExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-        </dict>
-      </dict>
-    </dict>
     <key>UIAppFonts</key>
     <array>
       <string>Andale Mono.ttf</string>
@@ -88,11 +77,28 @@
       <string>Times New Roman.ttf</string>
       <string>Zocial.ttf</string>
     </array>
-
     <key>NSAppTransportSecurity</key>
     <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>gharbi.me</key>
+        <dict>
+          <!--Include to allow subdomains-->
+          <key>NSIncludesSubdomains</key>
+          <true/>
+          <!--Include to allow HTTP requests-->
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+          <!--Include to specify minimum TLS version-->
+          <key>NSExceptionMinimumTLSVersion</key>
+          <string>TLSv1.1</string>
+        </dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
     </dict>
   </dict>
 </plist>
